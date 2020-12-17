@@ -3,6 +3,7 @@ import json
 db = pms.connect("localhost","root","12345678","db_safe_logistics")
 
 cursor = db.cursor()
+cursor.execute('create table if not exists city(id INTEGER ,cityname varchar);')
 all_data = '{"provinces":[{"citys":[{"citysName":"石家庄市"},{"citysName":"邯郸市"},{"citysName":"唐山市"},{"citysName":"保定市"},' \
            '{"citysName":"秦皇岛市"},{"citysName":"邢台市"},{"citysName":"张家口市"},{"citysName":"承德市"},{"citysName":"沧州市"},' \
            '{"citysName":"廊坊市"},{"citysName":"衡水市"},{"citysName":"辛集市"},{"citysName":"晋州市"},{"citysName":"新乐市"},' \
