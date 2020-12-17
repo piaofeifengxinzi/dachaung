@@ -1,6 +1,6 @@
 import pymysql as pms
 import json
-db = pms.connect("localhost","root","12345678","db_safe_logistics")
+db = pms.connect("localhost", "root", "12345678", "db_safe_logistics")
 
 cursor = db.cursor()
 cursor.execute('create table if not exists city(id int auto_increment primary key not null,cityname varchar(255));')
@@ -166,7 +166,7 @@ for x in data1:
     provinceName = x["provinceName"]
     for y in citys:
         count = count + 1;
-        print(y["citysName"])
+        # print(y["citysName"])
         sql = 'insert into city(id, cityname) values("%s","%s")'% (count, y["citysName"])
         cursor.execute(sql)
     count = count + 1;
@@ -174,5 +174,5 @@ for x in data1:
     cursor.execute(sql)
     db.commit()
 # data2 = data1["citys"]
-print("完成")
+print("完成城市导入")
 db.close();
