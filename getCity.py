@@ -157,7 +157,7 @@ all_data = '{"provinces":[{"citys":[{"citysName":"石家庄市"},{"citysName":"�
            '"provinceName":"新疆维吾尔自治区"}]} '
 
 data = json.loads(all_data)
-print(data)
+# print(data)
 data1 = data["provinces"]
 count = 0;
 for x in data1:
